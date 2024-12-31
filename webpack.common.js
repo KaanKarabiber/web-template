@@ -1,35 +1,35 @@
 const path = require('path');
- const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
- module.exports = {
-   entry: {
-     app: './src/index.js',
-   },
-   plugins: [
-     new HtmlWebpackPlugin({
-        template: "./src/template.html",
-        inject: "body"
-     }),
-   ],
-   output: {
+module.exports = {
+  entry: {
+    app: './src/index.js',
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/template.html',
+      inject: 'body',
+    }),
+  ],
+  output: {
     filename: '[name].[contenthash].js',
-     path: path.resolve(__dirname, 'dist'),
-     clean: true,
-   },
-   module: {
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
+  },
+  module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        loader: 'html-loader',
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
     ],
   },
- };
+};
