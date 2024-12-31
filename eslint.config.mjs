@@ -15,16 +15,14 @@ export default [
   },
   pluginJs.configs.recommended,
   {
-    // Disable ESLint rules that conflict with Prettier
     rules: prettier.rules,
   },
   {
-    // Add Prettier as a plugin and enforce its rules
     plugins: {
       prettier: prettierPlugin,
     },
     rules: {
-      'prettier/prettier': 'error', // Ensure Prettier errors show up in ESLint
+      'prettier/prettier': 'error',
     },
   },
 ];
