@@ -10,6 +10,7 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node, // Add Node.js globals like `require` and `__dirname`
+        ...globals.jest, // Add Jest globals like `test`, `expect`, etc.
       },
     },
   },
